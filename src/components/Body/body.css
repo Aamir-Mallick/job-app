@@ -1,0 +1,109 @@
+.main-body {
+    padding-top: 4rem;
+    background-color: #f6f6f6;
+}
+.main-body-top {
+    display: flex;
+    justify-content: space-around;
+}
+.recent-jobs {
+    font-size: 2rem;
+    margin: 0;
+    font-weight: bold;
+}
+.filter {
+    display: flex;
+    height: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #2f2f33;
+}
+.filter > div {
+    height: 100%;
+    width: 4rem;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    align-content: center;
+}
+.active {
+    background-color: #e31837;
+    color: #fff;
+}
+
+.not-active {
+    background-color: #fff;
+    color: #2f2f33;
+}
+
+.search {
+    display: flex;
+    gap: 0.5rem;
+}
+.advance-search {
+    padding-bottom: 1.6rem;
+    margin: -3rem 0 0 0;
+    font-weight: bold;
+}
+.search > div > input {
+    width: 20rem;
+    height: 2rem;
+}
+.search > div > button {
+    height: 2.4rem;
+    color: black;
+    border: 1px solid black;
+}
+.main-body-content {
+    margin-top: 3rem;
+}
+.card-container {
+    width: 25%;
+}
+.card-tile {
+    padding: 30px;
+    margin: 1rem;
+    background-color: #fff;
+}
+.category {
+    background-color: #808080;
+    height: 2.2rem;
+    width: 3.5rem;
+    text-align: center;
+    align-content: center;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+.role > span {
+    font-weight: bold;
+}
+.card-tile-top {
+    margin-bottom: 3rem;
+}
+.card-tile-middle {
+    margin-bottom: 2.5rem;
+}
+
+.card-tile-middle > div > span {
+    font-size: 14px;
+}
+
+.card-tile-bottom > button {
+    width: 100%;
+    color: black;
+    border: 1px solid black;
+    font-weight: bold;
+}
+.card-tile-bottom > button:hover {
+    background-color: black;
+    color: #fff;
+}
+.card-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
