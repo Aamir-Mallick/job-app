@@ -1,0 +1,21 @@
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 50px;
+}
+.header-menu {
+    display: flex;
+    gap: 20px;
+}
+.item {
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-bottom: 1px solid #ffffff;
+
+}
+.item:hover {
+    border-bottom: 1px solid #000000;
+}
