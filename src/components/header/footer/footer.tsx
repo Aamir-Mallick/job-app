@@ -1,4 +1,3 @@
-import React from "react";
 import logo from "../../../assets/techm_logo.png";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import XIcon from "@mui/icons-material/X";

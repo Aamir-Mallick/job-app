@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Button from "@mui/material/Button";
 import "./body.css";
 import Card from "./Card";
@@ -46,7 +46,7 @@ const Body = () => {
         <div className="card-container">
           {Array(16)
             .fill("")
-            .map((ele) => {
+            .map(() => {
               return <Card />;
             })}
         </div>
