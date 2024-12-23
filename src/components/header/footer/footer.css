@@ -1,0 +1,28 @@
+.footer-container {
+    padding: 100px 180px 50px 180px;
+    background-color: black;
+}
+.main-footer-container {
+    display: flex;
+    justify-content:space-between;
+    color: #fff;
+    margin-bottom: 100px;
+}
+.footer-content  > a {
+    display: block;
+    margin-top: 16px;
+}
+.footer-content-icons {
+    display: flex;
+    gap: 10px;
+}
+.footer-map {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    margin-top: 20px;
+}
+.term-and-policy {
+    display: flex;
+    gap: 10px;
+}

@@ -1,4 +1,3 @@
-import React from "react";
 import "./header.css";
 import logo from "../../assets/techm_logo.png";
 import Button from "@mui/material/Button";
@@ -24,8 +23,11 @@ const Header = () => {
       <div className="warning-bar">
         <div>
           <b>Scam Alert :</b>
-          To all Tech Mahindra job aspirants and applications, beware of fraudulent job offers
-          <a href="/images/IT_Fraud/Recruitment_Fraud.pdf" target="_blank">Learn More.. </a>
+          To all Tech Mahindra job aspirants and applications, beware of
+          fraudulent job offers
+          <a href="/images/IT_Fraud/Recruitment_Fraud.pdf" target="_blank">
+            Learn More..{" "}
+          </a>
         </div>
       </div>
     </div>
