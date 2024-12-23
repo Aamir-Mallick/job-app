@@ -44,7 +44,7 @@ const Body = () => {
       </div>
       <div className="main-body-content">
         <div className="card-container">
-          {Array(16)
+          {Array(17)
             .fill("")
             .map(() => {
               return <Card />;

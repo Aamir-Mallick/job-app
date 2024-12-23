@@ -77,3 +77,41 @@
     border: 1px solid white !important;
     margin-top: 2rem;
 }
+
+@media(max-width: 768px) {
+    .career-portal{
+        font-size: 1rem;
+        margin: 0;
+    }
+    .hero-banner-container-text-header {
+        font-size: 2.5rem;
+        font-weight: unset;
+    }
+    .career-text{
+        margin: 0;
+    }
+    .hero-banner-container-text{
+        margin: 1rem 2rem;
+    }
+    .image-text-container{
+        height: 16rem;
+        margin-right: 2rem;
+        width: 90%;
+        overflow-x: hidden;
+    }
+    .image-text1{
+        font-size: 1.8rem;
+        font-weight: unset;
+        margin-bottom: 1rem;
+    }
+    .swiper-slide img {
+        height: 100vh;
+    }
+    .image-text2{
+        /* margin: 0; */
+        font-size: 1rem;
+    }
+    .know-more-button > button{
+        margin-top: 0;
+    }
+}
