@@ -15,7 +15,6 @@ const tabs = {
 const Header = () => {
   const [show, setShow] = useState(false);
   const [navMenu, setNavMenu] = useState("");
-  const [menu, setMenu] = useState({});
   const [firstSubMenu, setFirstSubMenu] = useState(false);
   const [secondSubMenu, setSecondSubMenu] = useState(false);
 
@@ -35,7 +34,6 @@ const Header = () => {
     console.log(value);
     if (value !== null && headerDataItems[value]) {
       setNavMenu(value);
-      setMenu(headerDataItems[value])
     } else if (value === null) {
       setNavMenu("");
     }
