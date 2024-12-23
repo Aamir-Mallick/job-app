@@ -4,21 +4,66 @@
     align-items: center;
     margin: 0px 50px;
 }
-.header-menu {
+
+.header-menu-content {
     display: flex;
     gap: 20px;
+    align-items: center;
 }
-.item {
+
+ul {
+    list-style: none;
+}
+
+.item > a {
     text-transform: uppercase;
     font-size: 0.875rem;
     font-weight: 600;
     cursor: pointer;
     border-bottom: 1px solid #ffffff;
+    padding: 12px 15px;
+}
 
+.item > a:hover {
+    text-decoration: underline;
 }
-.item:hover {
-    border-bottom: 1px solid #000000;
+
+.header-menu-content li:hover .sub-menu {
+    z-index: 20;
+    display: flex;
 }
+
+.sub-menu {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    width: 100vw;
+    height: 500px;
+    left: -17px;
+    top: 70px;
+    justify-content: space-around;
+    padding-top: 50px;
+    overflow-x: hidden;
+}
+
+.sub-menu-header {
+    font-size: 2rem;
+    font-weight: bold;
+}
+.sub-menu-img {
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-menu-list {
+    line-height: 2.5rem;
+}
+
+.sub-menu-img img {
+    width: 300px;
+    height: 200px;
+}
+
 .warning-bar {
     padding: 8px 38px;
     height: auto;
@@ -27,13 +72,68 @@
     font-size: 14px;
     margin-top: 10px;
 }
-.warning-bar > div > a {
+
+.warning-bar>div>a {
     margin-left: 5px;
     text-decoration: none;
     color: #e31837;
     letter-spacing: 0.5px;
     line-height: 21px;
 }
+
 .header {
     margin-top: 15px;
+}
+
+.header-menu-mobile {
+    display: none;
+}
+
+@media(max-width:992px) {
+    .header-container {
+        margin: 0;
+        padding: 10px 25px 10px;
+    }
+
+    .header-menu {
+        display: none;
+    }
+
+    .header-menu-mobile {
+        display: block;
+        position: relative;
+    }
+
+    .menu-overlay {
+        position: absolute;
+        z-index: 20;
+        background-color: #ffffff;
+        width: 100vw;
+        height: 100vh;
+        top: 77px;
+        padding-left: 1rem;
+        padding-top: 2rem;
+    }
+}
+
+.mobile-header {
+    font-weight: bold;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    height: 5rem;
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.up-down-icon {
+    margin-top: 6px;
+    margin-right: 6rem;
+}
+
+.mobile-header-inner {
+    padding-left: 3rem;
+    line-height: 2rem;
+    padding-top: 1rem;
+    margin-bottom: 1rem;
 }

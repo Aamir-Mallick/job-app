@@ -9,7 +9,7 @@ import "./footer.css";
 const Footer = () => {
   return (
     <div className="footer-container">
-      <div>
+      <div className="footer-container-desktop">
         <div className="main-footer-container">
           <div>
             {" "}
@@ -36,14 +36,43 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <div className="footer-container-mobile">
+        <div className="main-footer-container">
+          <div>
+            {" "}
+            <img src={logo} alt="logo" />{" "}
+          </div>
+          <div className="footer-content-parent">
+            <div className="footer-content">
+              <a>Why TechM</a>
+              <a>The TechM Way</a>
+              <a>Diversity & Inclusion</a>
+              <a>Contact Us</a>
+            </div>
+            <div className="footer-content">
+              <a>Register</a>
+              <a>Sign In</a>
+              <a>IT Opportunities</a>
+              <a>BPS Opportunities</a>
+            </div>
+          </div>
+          <div className="footer-content-icons">
+            <FacebookIcon />
+            <XIcon />
+            <LinkedInIcon />
+            <YouTubeIcon />
+            <InstagramIcon />
+          </div>
+        </div>
+      </div>
       <div>
         <hr />
         <div className="footer-map">
-          <div>© 2024 Tech Mahindra Limited</div>
+          <div><p>© 2024 Tech Mahindra Limited</p></div>
           <div className="term-and-policy">
-            <div>Terms of Use</div>
-            <div>Privacy Policy</div>
-            <div>Cookie Policy</div>
+            <div><p>Terms of Use</p></div>
+            <div><p>Privacy Policy</p></div>
+            <div><p>Cookie Policy</p></div>
           </div>
         </div>
       </div>
