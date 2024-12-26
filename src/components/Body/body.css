@@ -2,15 +2,18 @@
     padding-top: 4rem;
     background-color: #f6f6f6;
 }
+
 .main-body-top {
     display: flex;
     justify-content: space-around;
 }
+
 .recent-jobs {
     font-size: 2rem;
     margin: 0;
     font-weight: bold;
 }
+
 .filter {
     display: flex;
     height: 2.5rem;
@@ -18,7 +21,8 @@
     align-items: center;
     border: 1px solid #2f2f33;
 }
-.filter > div {
+
+.filter>div {
     height: 100%;
     width: 4rem;
     cursor: pointer;
@@ -26,6 +30,7 @@
     text-align: center;
     align-content: center;
 }
+
 .active {
     background-color: #e31837;
     color: #fff;
@@ -40,31 +45,38 @@
     display: flex;
     gap: 0.5rem;
 }
+
 .advance-search {
     padding-bottom: 1.6rem;
     margin: -3rem 0 0 0;
     font-weight: bold;
 }
-.search > div > input {
+
+.search>div>input {
     width: 20rem;
     height: 2rem;
 }
-.search > div > button {
+
+.search>div>button {
     height: 2.4rem;
     color: black;
     border: 1px solid black;
 }
+
 .main-body-content {
     margin-top: 3rem;
 }
+
 .card-container {
     width: 25%;
 }
+
 .card-tile {
     padding: 30px;
     margin: 1.3rem;
     background-color: #fff;
 }
+
 .category {
     background-color: #808080;
     height: 2.2rem;
@@ -75,42 +87,45 @@
     font-weight: bold;
     margin-bottom: 0.5rem;
 }
-.role > span {
+
+.role>span {
     font-weight: bold;
 }
+
 .card-tile-top {
     margin-bottom: 3rem;
 }
+
 .card-tile-middle {
     margin-bottom: 2.5rem;
 }
 
-.card-tile-middle > div > span {
+.card-tile-middle>div>span {
     font-size: 14px;
 }
 
-.card-tile-bottom > button {
+.card-tile-bottom>button {
     width: 100%;
     color: black;
     border: 1px solid black;
     font-weight: bold;
 }
-.card-tile-bottom > button:hover {
+
+.card-tile-bottom>button:hover {
     background-color: black;
     color: #fff;
 }
+
 .card-container {
     display: flex;
     width: 100%;
-    align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
 }
 
 @media (max-width: 992px) {
     .card-tile {
         padding: 19px;
-        margin: 0.2rem;
+        margin: 0.1rem 0.2rem;
     }
 
     .main-body-top {
@@ -119,7 +134,7 @@
         justify-content: flex-start;
         align-items: flex-start;
     }
-    
+
     .advance-search {
         margin-top: 2rem;
     }
@@ -136,9 +151,86 @@
         flex-direction: column;
     }
 }
+
 @media (max-width: 768px) {
+
     .card-tile {
-        margin-top: 0.5rem;
-        margin-bottom: 0.5rem;
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+    }
+}
+
+@media(max-width: 480px) {
+    .card-container {
+        align-items: center;
+        justify-content: center;
+    }
+    .card-tile {
+        width: 75%;
+        padding: 15px;
+        margin: 1rem;
+    }
+}
+
+.main-body-form {
+    background-color: #fff;
+}
+.form {
+    margin: 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+.form-header > div > p {
+    margin: 0.5rem 0;
+    font-size: 27px;
+    font-weight: bold;
+}
+.form-header > span {
+    color: #e31837;
+}
+
+.form-details {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.from-personal-details > div, .form-education-details > div {
+    margin: 0.4rem 0.4rem;
+}
+
+.form-submit-button {
+    margin: auto;
+}
+
+.form-submit-button > button {
+    color: black;
+    border: 1px solid black;
+}
+
+.form-submit-button > button:hover {
+    color: white;
+    background-color: black;
+}
+
+@media (max-width: 768px) {
+    .from-personal-details, .form-education-details {
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+    }
+}
+
+@media(max-width: 480px) {
+    .from-personal-details, .form-education-details {
+        display: flex;
+        flex-direction: column;
+    }
+    .form {
+        margin: 1rem 2rem;
+    }
+    .from-personal-details, .form-education-details {
+        width: 100%;
     }
 }
