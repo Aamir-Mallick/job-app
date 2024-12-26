@@ -20,3 +20,38 @@ export const headerDataItems = {
     img: [subImage3,subImage4]
   }
 }
+
+export const studyLevelConstants = [
+  {
+    value: "1st Year, 1st Sem",
+    label: "1st Year, 1st Sem"
+  },
+  {
+    value: "1st Year, 2nd Sem",
+    label: "1st Year, 2nd Sem"
+  },
+  {
+    value: "2nd Year, 1st Sem",
+    label: "2nd Year, 1st Sem"
+  },
+  {
+    value: "2nd Year, 2nd Sem",
+    label: "2nd Year, 2nd Sem"
+  },
+  {
+    value: "3rd Year, 1st Sem",
+    label: "3rd Year, 1st Sem"
+  },
+  {
+    value: "3rd Year, 2nd Sem",
+    label: "3rd Year, 2nd Sem"
+  },
+  {
+    value: "4th Year, 1st Sem",
+    label: "4th Year, 1st Sem"
+  },
+  {
+    value: "4th Year, 2nd Sem",
+    label: "4th Year, 2nd Sem"
+  },
+]

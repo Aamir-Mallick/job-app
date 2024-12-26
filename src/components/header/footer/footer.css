@@ -45,9 +45,11 @@
         padding-bottom: 45px;
         justify-content: center;
     }
+    .footer-content {
+        margin-right: 5rem;
+    }
     .footer-content-parent {
         display: flex;
-        justify-content: space-between;
     }
     .footer-content  > a {
         margin-top: 10px;
@@ -63,5 +65,14 @@
     }
     .term-and-policy{
         justify-content: space-between;
+    }
+}
+
+@media(max-width: 480px) {
+    .footer-content-parent {
+        justify-content: space-between;
+    }
+    .footer-content {
+        margin: unset;
     }
 }
