@@ -6,6 +6,7 @@ import { useState } from "react";
 import { headerDataItems } from "../../constants";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import { NavLink } from "react-router";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const tabs = {
@@ -109,7 +110,9 @@ const Header = () => {
             </li>
             {window.location.pathname === "/" ? (
               <li>
-                <Button variant="outlined">sign up/login</Button>
+                <NavLink to="/register" end>
+                  <Button variant="outlined">sign up/login</Button>
+                </NavLink>
               </li>
             ) : null}
           </ul>
