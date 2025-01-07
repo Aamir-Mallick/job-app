@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Button from "@mui/material/Button";
 import { useState } from "react";
 import "./body.css";
