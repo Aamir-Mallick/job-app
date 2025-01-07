@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Button from "@mui/material/Button";
-import BodyForm from "./BodyForm";
 import "./body.css";
 import Card from "./Card";
 
@@ -12,7 +11,7 @@ const Body = () => {
   return (
     <div>
       <div className="main-body">
-        <div className="main-body-top">
+        {/* <div className="main-body-top">
           <div>
             <p className="recent-jobs">Recent Jobs</p>
           </div>
@@ -43,7 +42,7 @@ const Body = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="main-body-content">
           <div className="card-container">
             {Array(17)
@@ -54,9 +53,9 @@ const Body = () => {
           </div>
         </div>
       </div>
-      <div className="main-body-form">
+      {/* <div className="main-body-form">
         <BodyForm />
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -176,13 +176,17 @@
     background-color: #fff;
 }
 .form {
-    margin: 2rem 3rem;
     display: flex;
     flex-direction: column;
-    gap: 100px;
+    max-width: 500px;
+    margin: 0px auto;
+    margin-bottom: 2rem;
+}
+.form > div > h1 {
+    margin:  0.5rem;
 }
 .form-header > div > p {
-    margin: 0.5rem 0;
+    margin: 0.5rem;
     font-size: 27px;
     font-weight: bold;
 }
@@ -195,16 +199,24 @@
     flex-direction: column;
     gap: 50px;
 }
+.from-personal-details > h2 {
+    margin:  0.5rem;
+}
 
-.from-personal-details > div, .form-education-details > div {
-    margin: 0.4rem 0.4rem;
+.from-personal-details, .form-education-details {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 }
 
 .form-submit-button {
-    margin: auto;
+   display: flex;
+   justify-content: center;
+   margin-top: 25px;
 }
 
 .form-submit-button > button {
+    width: 100%;
     color: black;
     border: 1px solid black;
 }
@@ -215,22 +227,9 @@
 }
 
 @media (max-width: 768px) {
-    .from-personal-details, .form-education-details {
+    .from-personal-details, .form-education-details, .form-submit-button {
         display: flex;
-        flex-wrap: wrap;
-        margin: auto;
+        margin: 2rem;
     }
 }
 
-@media(max-width: 480px) {
-    .from-personal-details, .form-education-details {
-        display: flex;
-        flex-direction: column;
-    }
-    .form {
-        margin: 1rem 2rem;
-    }
-    .from-personal-details, .form-education-details {
-        width: 100%;
-    }
-}
