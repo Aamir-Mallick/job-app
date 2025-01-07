@@ -137,3 +137,8 @@ ul {
     padding-top: 1rem;
     margin-bottom: 1rem;
 }
+.mobile-header-inner > a {
+    text-decoration: none;
+    color: black;
+}
+

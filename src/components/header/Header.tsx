@@ -159,7 +159,9 @@ const Header = () => {
               <div className="mobile-header-inner">
                 {window.location.pathname === "/" ? (
                   <>
-                    <div>{headerDataItems.getStarted.ul[0]}</div>
+                    <NavLink to="/register" end>
+                      <div>{headerDataItems.getStarted.ul[0]}</div>
+                    </NavLink>
                     <div>{headerDataItems.getStarted.ul[1]}</div>
                   </>
                 ) : null}
