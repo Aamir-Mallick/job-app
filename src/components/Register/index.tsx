@@ -1,4 +1,3 @@
-import React from "react";
 import BodyForm from "../Body/BodyForm";
 import Header from "../header/Header";
 import Footer from "../header/footer/footer";
