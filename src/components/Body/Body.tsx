@@ -1,10 +1,12 @@
 import { useState } from "react";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Button from "@mui/material/Button";
 import "./body.css";
 import Card from "./Card";
 
 const Body = () => {
   const [active, setActive] = useState(true);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleClick = () => {
     setActive(!active);
   };

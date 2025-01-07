@@ -7,6 +7,7 @@ import { headerDataItems } from "../../constants";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const tabs = {
   lifeAtTechM: "lifeAtTechM",
   getStarted: "getStarted",
