@@ -4,6 +4,11 @@ import { useState } from "react";
 import "./body.css";
 import { TextField } from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import FormControl from "@mui/material/FormControl";
+import FormLabel from "@mui/material/FormLabel";
 import { studyLevelConstants } from "../../constants";
 
 const BodyForm = () => {
@@ -38,6 +43,34 @@ const BodyForm = () => {
             label="Last Name"
             defaultValue=""
           />
+
+          <FormControl>
+            <FormLabel id="demo-row-radio-buttons-group-label">
+              Father/Mother/Guardian Name *
+            </FormLabel>
+            <RadioGroup
+              row
+              aria-labelledby="demo-row-radio-buttons-group-label"
+              name="row-radio-buttons-group"
+            >
+              <FormControlLabel
+                value="Father"
+                control={<Radio />}
+                label="Father"
+              />
+              <FormControlLabel
+                value="Mother"
+                control={<Radio />}
+                label="Mother"
+              />
+              <FormControlLabel
+                value="Guardian"
+                control={<Radio />}
+                label="Guardian"
+              />
+            </RadioGroup>
+          </FormControl>
+
           <TextField
             onChange={handleDetailsChange}
             required
@@ -86,8 +119,8 @@ const BodyForm = () => {
           <TextField
             onChange={handleDetailsChange}
             required
-            id="universityName"
-            label="University Name"
+            id="UniversityorBoardName"
+            label="University or Board Name"
             defaultValue=""
           />
           <TextField
