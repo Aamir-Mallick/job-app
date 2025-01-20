@@ -6,15 +6,18 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import Home from "./components/home";
 import Register from "./components/Register";
+import { UserContextProvider } from "./context/userContext";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="register" element={<Register />} />
-      </Routes>
-    </BrowserRouter>
+    <UserContextProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="register" element={<Register />} />
+        </Routes>
+      </BrowserRouter>
+    </UserContextProvider>
   );
 }
 

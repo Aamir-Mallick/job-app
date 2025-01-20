@@ -4,7 +4,9 @@ import subImage3 from "./assets/sub_image3.jpg";
 import subImage4 from "./assets/sub_image4.jpg";
 
 interface headerDataItems {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   lifeAtTechM: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   getStarted: any;
 }
 
@@ -30,28 +32,28 @@ export const studyLevelConstants = [
     value: "2nd Year",
     label: "2nd Year",
   },
-  // {
-  //   value: "2nd Year, 1st Sem",
-  //   label: "2nd Year, 1st Sem"
-  // },
-  // {
-  //   value: "2nd Year, 2nd Sem",
-  //   label: "2nd Year, 2nd Sem"
-  // },
-  // {
-  //   value: "3rd Year, 1st Sem",
-  //   label: "3rd Year, 1st Sem"
-  // },
-  // {
-  //   value: "3rd Year, 2nd Sem",
-  //   label: "3rd Year, 2nd Sem"
-  // },
-  // {
-  //   value: "4th Year, 1st Sem",
-  //   label: "4th Year, 1st Sem"
-  // },
-  // {
-  //   value: "4th Year, 2nd Sem",
-  //   label: "4th Year, 2nd Sem"
-  // },
+  {
+    value: "2nd Year, 1st Sem",
+    label: "2nd Year, 1st Sem",
+  },
+  {
+    value: "2nd Year, 2nd Sem",
+    label: "2nd Year, 2nd Sem",
+  },
+  {
+    value: "3rd Year, 1st Sem",
+    label: "3rd Year, 1st Sem",
+  },
+  {
+    value: "3rd Year, 2nd Sem",
+    label: "3rd Year, 2nd Sem",
+  },
+  {
+    value: "4th Year, 1st Sem",
+    label: "4th Year, 1st Sem",
+  },
+  {
+    value: "4th Year, 2nd Sem",
+    label: "4th Year, 2nd Sem",
+  },
 ];

@@ -1,12 +1,15 @@
 import "./header.css";
 import logo from "../../assets/techm_logo.png";
 import Button from "@mui/material/Button";
-import MenuIcon from "@mui/icons-material/Menu";
+// import MenuIcon from "@mui/icons-material/MenuIcon";
+import DehazeIcon from "@mui/icons-material/Dehaze";
 import { useState } from "react";
 import { headerDataItems } from "../../constants";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import { NavLink } from "react-router";
+import { useContext } from "react";
+import { userContext } from "../../context/userContext";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const tabs = {
@@ -15,11 +18,12 @@ const tabs = {
 };
 
 const Header = () => {
+  const { user } = useContext(userContext);
   const [show, setShow] = useState(false);
   const [navMenu, setNavMenu] = useState("");
   const [firstSubMenu, setFirstSubMenu] = useState(false);
   const [secondSubMenu, setSecondSubMenu] = useState(false);
-  console.log("rr", window.location.pathname);
+  console.log("rr");
   const handleFirstSubMenu = () => {
     setFirstSubMenu(!firstSubMenu);
   };
@@ -110,16 +114,22 @@ const Header = () => {
             </li>
             {window.location.pathname === "/" ? (
               <li>
-                <NavLink to="/register" end>
-                  <Button variant="outlined">sign up/login</Button>
-                </NavLink>
+                {user ? (
+                  <NavLink to="/">
+                    <Button variant="outlined">Log out</Button>
+                  </NavLink>
+                ) : (
+                  <NavLink to="/register" end>
+                    <Button variant="outlined">sign up/login</Button>
+                  </NavLink>
+                )}
               </li>
             ) : null}
           </ul>
         </div>
         <div className="header-menu-mobile">
           <div className="menu-icon" onClick={showMenuItems}>
-            <MenuIcon />
+            <DehazeIcon />
           </div>
         </div>
       </div>

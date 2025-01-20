@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Button from "@mui/material/Button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./body.css";
 import { TextField } from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
@@ -9,18 +9,56 @@ import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { collection, addDoc } from "firebase/firestore";
 import { studyLevelConstants } from "../../constants";
+import { auth, db } from "../../firebase";
+import { useContext } from "react";
+import { userContext } from "../../context/userContext";
+import { useNavigate } from "react-router";
 
 const BodyForm = () => {
+  let navigate = useNavigate();
+  const { user, setUser } = useContext(userContext);
   const [formDetails, setFormDetails] = useState<any>({});
 
   const handleDetailsChange = (e: any) => {
     setFormDetails({ ...formDetails, [e.target.id]: e.target.value });
   };
 
-  const handleFromDetails = () => {
-    console.log(formDetails);
+  const handleSubmit = () => {
+    createUserWithEmailAndPassword(
+      auth,
+      formDetails.email,
+      formDetails.password
+    )
+      .then((userCredential) => {
+        // Signed up
+        const user = userCredential.user;
+        console.log("tt", user);
+        setUser(user.uid);
+        saveUser();
+
+        // ...
+      })
+      .catch((error) => {
+        console.log("ty", error);
+        // const errorCode = error.code;
+        // const errorMessage = error.message;
+        // ..
+      });
   };
+
+  const saveUser = async () => {
+    try {
+      const docRef = await addDoc(collection(db, "users"), formDetails);
+      console.log("Document written with ID: ", docRef.id);
+      navigate("/");
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+  };
+
   return (
     <div className="form">
       <div>
@@ -176,7 +214,7 @@ const BodyForm = () => {
         </div>
       </div>
       <div className="form-submit-button">
-        <Button onClick={handleFromDetails} variant="outlined">
+        <Button onClick={handleSubmit} variant="outlined">
           SUBMIT
         </Button>
       </div>
