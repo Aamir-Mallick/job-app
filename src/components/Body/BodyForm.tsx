@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Button from "@mui/material/Button";
-import { useEffect, useState } from "react";
+import { SetStateAction, useState } from "react";
 import "./body.css";
 import { TextField } from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
@@ -14,16 +14,18 @@ import { collection, addDoc } from "firebase/firestore";
 import { studyLevelConstants } from "../../constants";
 import { auth, db } from "../../firebase";
 import { useContext } from "react";
-import { userContext } from "../../context/userContext";
+import { userContext, USER } from "../../context/userContext";
 import { useNavigate } from "react-router";
 
 const BodyForm = () => {
   const navigate = useNavigate();
-  const { user, setUser } = useContext(userContext);
+  const { setUser } = useContext(userContext) as USER;
   const [formDetails, setFormDetails] = useState<any>({});
   const [value, setValue] = useState("");
 
-  const handleChange = (event) => {
+  const handleChange = (event: {
+    target: { value: SetStateAction<string> };
+  }) => {
     setValue(event.target.value);
     setFormDetails({ ...formDetails, Guardian: event.target.value });
   };
@@ -32,7 +34,7 @@ const BodyForm = () => {
     setFormDetails({ ...formDetails, [e.target.id]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     console.log("e", e);
     e.preventDefault();
 

@@ -9,7 +9,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import { NavLink } from "react-router";
 import { useContext } from "react";
-import { userContext } from "../../context/userContext";
+import { userContext, USER } from "../../context/userContext";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const tabs = {
@@ -18,7 +18,7 @@ const tabs = {
 };
 
 const Header = () => {
-  const { user } = useContext(userContext);
+  const { user } = useContext(userContext) as USER;
   const [show, setShow] = useState(false);
   const [navMenu, setNavMenu] = useState("");
   const [firstSubMenu, setFirstSubMenu] = useState(false);
