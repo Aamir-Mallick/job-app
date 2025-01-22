@@ -18,15 +18,24 @@ import { userContext } from "../../context/userContext";
 import { useNavigate } from "react-router";
 
 const BodyForm = () => {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const { user, setUser } = useContext(userContext);
   const [formDetails, setFormDetails] = useState<any>({});
+  const [value, setValue] = useState("");
+
+  const handleChange = (event) => {
+    setValue(event.target.value);
+    setFormDetails({ ...formDetails, Guardian: event.target.value });
+  };
 
   const handleDetailsChange = (e: any) => {
     setFormDetails({ ...formDetails, [e.target.id]: e.target.value });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    console.log("e", e);
+    e.preventDefault();
+
     createUserWithEmailAndPassword(
       auth,
       formDetails.email,
@@ -60,165 +69,171 @@ const BodyForm = () => {
   };
 
   return (
-    <div className="form">
-      <div>
-        <h1>Student Registration Form</h1>
-      </div>
-      <div className="form-details">
-        <div className="from-personal-details">
-          <h2>Personal Details</h2>
-          <TextField
-            onChange={handleDetailsChange}
-            required
-            id="firstName"
-            label="First Name"
-            defaultValue=""
-          />
-          <TextField
-            onChange={handleDetailsChange}
-            required
-            id="lastName"
-            label="Last Name"
-            defaultValue=""
-          />
+    <form onSubmit={handleSubmit}>
+      <div className="form">
+        <div>
+          <h1>Student Registration Form</h1>
+        </div>
+        <div className="form-details">
+          <div className="from-personal-details">
+            <h2>Personal Details</h2>
+            <TextField
+              onChange={handleDetailsChange}
+              required
+              id="firstName"
+              label="First Name"
+              defaultValue=""
+            />
+            <TextField
+              onChange={handleDetailsChange}
+              required
+              id="lastName"
+              label="Last Name"
+              defaultValue=""
+            />
 
-          <FormControl>
-            <FormLabel id="demo-row-radio-buttons-group-label">
-              Father/Mother/Guardian Name *
-            </FormLabel>
-            <RadioGroup
-              row
-              aria-labelledby="demo-row-radio-buttons-group-label"
-              name="row-radio-buttons-group"
+            <FormControl>
+              <FormLabel id="demo-row-radio-buttons-group-label">
+                Father/Mother/Guardian Name *
+              </FormLabel>
+              <RadioGroup
+                aria-required
+                row
+                aria-labelledby="demo-row-radio-buttons-group-label"
+                name="row-radio-buttons-group"
+                value={value}
+                onChange={handleChange}
+              >
+                <FormControlLabel
+                  value="Father"
+                  control={<Radio />}
+                  label="Father"
+                />
+                <FormControlLabel
+                  value="Mother"
+                  control={<Radio />}
+                  label="Mother"
+                />
+                <FormControlLabel
+                  value="Guardian"
+                  control={<Radio />}
+                  label="Guardian"
+                />
+              </RadioGroup>
+            </FormControl>
+
+            <TextField
+              onChange={handleDetailsChange}
+              required
+              id="fatherName"
+              label="Father Name"
+              defaultValue=""
+            />
+            <TextField
+              onChange={handleDetailsChange}
+              required
+              id="phNo1"
+              label="Phone Number 1"
+              defaultValue=""
+            />
+            <TextField
+              onChange={handleDetailsChange}
+              required
+              id="phNo2"
+              label="Phone Number 2"
+              defaultValue=""
+            />
+            <TextField
+              onChange={handleDetailsChange}
+              required
+              id="email"
+              label="Email ID"
+              defaultValue=""
+            />
+            <TextField
+              onChange={handleDetailsChange}
+              type="password"
+              id="password"
+              required
+              label="Password"
+              defaultValue=""
+            />
+            <TextField
+              onChange={handleDetailsChange}
+              id="transactionID"
+              label="Transaction ID/ UTRID"
+              defaultValue=""
+            />
+          </div>
+          <div className="form-education-details">
+            <h2>Educational Details</h2>
+            <TextField
+              onChange={handleDetailsChange}
+              required
+              id="UniversityorBoardName"
+              label="University or Board Name"
+              defaultValue=""
+            />
+            <TextField
+              onChange={handleDetailsChange}
+              required
+              id="collegeName"
+              label="College Name"
+              defaultValue=""
+            />
+            <TextField
+              onChange={handleDetailsChange}
+              required
+              select
+              id="studyLevel"
+              helperText="Please select your study level"
+              label="Study Level"
+              defaultValue=""
             >
-              <FormControlLabel
-                value="Father"
-                control={<Radio />}
-                label="Father"
-              />
-              <FormControlLabel
-                value="Mother"
-                control={<Radio />}
-                label="Mother"
-              />
-              <FormControlLabel
-                value="Guardian"
-                control={<Radio />}
-                label="Guardian"
-              />
-            </RadioGroup>
-          </FormControl>
+              {studyLevelConstants.map((option) => {
+                return (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                );
+              })}
+            </TextField>
+            <TextField
+              onChange={handleDetailsChange}
+              required
+              id="subjectBranch"
+              label="Subject Branch / Group"
+              defaultValue=""
+            />
+            <TextField
+              onChange={handleDetailsChange}
+              required
+              id="collegeAddress"
+              label="College Address Details"
+              defaultValue=""
+            />
+            <TextField
+              onChange={handleDetailsChange}
+              id="cityVillageAddress"
+              label="City / Village Name"
+              defaultValue=""
+            />
+            <TextField
+              onChange={handleDetailsChange}
+              id="district"
+              label="Disctrict"
+              defaultValue=""
+            />
+          </div>
+        </div>
 
-          <TextField
-            onChange={handleDetailsChange}
-            required
-            id="fatherName"
-            label="Father Name"
-            defaultValue=""
-          />
-          <TextField
-            onChange={handleDetailsChange}
-            required
-            id="phNo1"
-            label="Phone Number 1"
-            defaultValue=""
-          />
-          <TextField
-            onChange={handleDetailsChange}
-            required
-            id="phNo2"
-            label="Phone Number 2"
-            defaultValue=""
-          />
-          <TextField
-            onChange={handleDetailsChange}
-            required
-            id="email"
-            label="Email ID"
-            defaultValue=""
-          />
-          <TextField
-            onChange={handleDetailsChange}
-            type="password"
-            id="password"
-            required
-            label="Password"
-            defaultValue=""
-          />
-          <TextField
-            onChange={handleDetailsChange}
-            id="transactionID"
-            label="Transaction ID/ UTRID"
-            defaultValue=""
-          />
-        </div>
-        <div className="form-education-details">
-          <h2>Educational Details</h2>
-          <TextField
-            onChange={handleDetailsChange}
-            required
-            id="UniversityorBoardName"
-            label="University or Board Name"
-            defaultValue=""
-          />
-          <TextField
-            onChange={handleDetailsChange}
-            required
-            id="collegeName"
-            label="College Name"
-            defaultValue=""
-          />
-          <TextField
-            onChange={handleDetailsChange}
-            required
-            select
-            id="studyLevel"
-            helperText="Please select your study level"
-            label="Study Level"
-            defaultValue=""
-          >
-            {studyLevelConstants.map((option) => {
-              return (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              );
-            })}
-          </TextField>
-          <TextField
-            onChange={handleDetailsChange}
-            required
-            id="subjectBranch"
-            label="Subject Branch / Group"
-            defaultValue=""
-          />
-          <TextField
-            onChange={handleDetailsChange}
-            required
-            id="collegeAddress"
-            label="College Address Details"
-            defaultValue=""
-          />
-          <TextField
-            onChange={handleDetailsChange}
-            id="cityVillageAddress"
-            label="City / Village Name"
-            defaultValue=""
-          />
-          <TextField
-            onChange={handleDetailsChange}
-            id="district"
-            label="Disctrict"
-            defaultValue=""
-          />
+        <div className="form-submit-button">
+          <Button type="submit" variant="outlined">
+            SUBMIT
+          </Button>
         </div>
       </div>
-      <div className="form-submit-button">
-        <Button onClick={handleSubmit} variant="outlined">
-          SUBMIT
-        </Button>
-      </div>
-    </div>
+    </form>
   );
 };
 
