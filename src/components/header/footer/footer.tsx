@@ -68,11 +68,19 @@ const Footer = () => {
       <div>
         <hr />
         <div className="footer-map">
-          <div><p>© 2024 Tech Mahindra Limited</p></div>
+          <div>
+            <p>© 2024 Tech Mahindra Limited</p>
+          </div>
           <div className="term-and-policy">
-            <div><p>Terms of Use</p></div>
-            <div><p>Privacy Policy</p></div>
-            <div><p>Cookie Policy</p></div>
+            <div>
+              <p>Terms of Use</p>
+            </div>
+            <div>
+              <p>Privacy Policy</p>
+            </div>
+            <div>
+              <p>Cookie Policy</p>
+            </div>
           </div>
         </div>
       </div>

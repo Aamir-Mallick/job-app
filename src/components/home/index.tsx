@@ -3,12 +3,12 @@ import HeroBanner from "../heroBanner/HeroBanner";
 import Body from "../Body/Body";
 import Footer from "../header/footer/footer";
 import { useEffect, useContext } from "react";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebase";
-import { userContext } from "../../context/userContext";
+import { userContext, USER } from "../../context/userContext";
 
 const Home = () => {
-  const { setUser } = useContext(userContext);
+  const { setUser } = useContext(userContext) as USER;
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
