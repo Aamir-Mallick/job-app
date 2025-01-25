@@ -16,6 +16,7 @@ const Home = () => {
         // https://firebase.google.com/docs/reference/js/auth.user
         const uid = user.uid;
         setUser(uid);
+        console.log("auth", uid);
         // ...
       } else {
         // User is signed out

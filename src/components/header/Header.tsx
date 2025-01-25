@@ -23,7 +23,7 @@ const Header = () => {
   const [navMenu, setNavMenu] = useState("");
   const [firstSubMenu, setFirstSubMenu] = useState(false);
   const [secondSubMenu, setSecondSubMenu] = useState(false);
-  console.log("rr");
+
   const handleFirstSubMenu = () => {
     setFirstSubMenu(!firstSubMenu);
   };
